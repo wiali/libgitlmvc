@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QDebug>
-#include "gitlivkcmdevt.h"
+#include "cmdevt.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -17,7 +17,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::onUIUpdate(GitlUpdateUIEvt &rcEvt)
+void MainWindow::onUIUpdate(UpdateUIEvt &rcEvt)
 {
 
     QString strDataInView = rcEvt.getParameter("data_to_view").toString();
@@ -29,7 +29,7 @@ void MainWindow::onUIUpdate(GitlUpdateUIEvt &rcEvt)
 void MainWindow::on_mtTestButton_clicked()
 {
     /// event (in real case, this event should be dispatch from user interface, i.e. the views)
-    GitlIvkCmdEvt cRequestEvt("show_string_command");
-    cRequestEvt.setParameter("data_to_command", "Hello GitlMVC");
+    CmdEvt cRequestEvt("show_string_command");
+    cRequestEvt.setParameter("data_to_command", "Hello MVC");
     cRequestEvt.dispatch();
 }

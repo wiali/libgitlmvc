@@ -1,15 +1,8 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2012-11-02T17:27:25
-#
-#-------------------------------------------------
-
-QT       += core
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += core
+QT += widgets
 
 DESTDIR = $${OUT_PWD}/..
 
-# c++11 enalbed
 CONFIG   += c++11
 CONFIG   += console
 CONFIG   += staticlib
@@ -17,32 +10,45 @@ CONFIG   -= app_bundle
 
 TEMPLATE = lib
 
-LIBS += -L$${OUT_PWD}/../libgitlevtbus
-
-
 CONFIG(debug, debug|release){
     TARGET = GitlMVCd
-    LIBS += -lGitlEvtBusd
 }
 CONFIG(release, debug|release){
     TARGET = GitlMVC
-    LIBS += -lGitlEvtBus
 }
 
-
 HEADERS += \
-    gitlfrontcontroller.h \
-    gitlabstractcommand.h \
-    gitlmvcconst.h \
-    gitlview.h \
-    gitlupdateuievt.h \
-    gitlivkcmdevt.h \
-    gitlmodel.h
+    frontcontroller.h \
+    abstractcommand.h \
+    view.h \
+    updateuievt.h \
+    cmdevt.h \
+    abstractcommand.h \
+    cmdevt.h \
+    def.h \
+    event.h \
+    eventbus.h \
+    eventparam.h \
+    frontcontroller.h \
+    model.h \
+    module.h \
+    moduledelegate.h \
+    updateuievt.h \
+    view.h
 
 SOURCES += \
-    gitlfrontcontroller.cpp \
-    gitlview.cpp \
-    gitlupdateuievt.cpp \
-    gitlivkcmdevt.cpp
+    frontcontroller.cpp \
+    view.cpp \
+    updateuievt.cpp \
+    cmdevt.cpp \
+    cmdevt.cpp \
+    event.cpp \
+    eventbus.cpp \
+    eventparam.cpp \
+    frontcontroller.cpp \
+    module.cpp \
+    moduledelegate.cpp \
+    updateuievt.cpp \
+    view.cpp
 
 

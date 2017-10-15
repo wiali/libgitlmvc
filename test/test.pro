@@ -1,33 +1,25 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2013-05-28T02:26:05
-#
-#-------------------------------------------------
+QT += core testlib
+QT  -= gui
 
-QT       += core testlib
-
-QT       -= gui
-
-TARGET = TestGitlEvtBus
+TARGET = TestMVC
 CONFIG   += console
 CONFIG   += c++11
 CONFIG   -= app_bundle
 
 TEMPLATE = app
 
-INCLUDEPATH    += ../../libgitlmvc/src \
-                  ../libgitlevtbus/src
+INCLUDEPATH  += ../../libmvc/src
 
 SOURCES += \
-    testcase.cpp
+    testcase.cpp \
+    #testcase2.cpp \
+    #testmacro.cpp \
 
-
-
-LIBS += -L$${OUT_PWD}/.. -L$${OUT_PWD}/../libgitlevtbus
+LIBS += -L$${OUT_PWD}/..
 
 CONFIG(debug, debug|release){
-    LIBS += -lGitlMVCd -lGitlEvtBusd
+    LIBS += -lGitlMVCd
 }
 CONFIG(release, debug|release){
-    LIBS += -lGitlMVC  -lGitlEvtBus
+    LIBS += -lGitlMVC
 }

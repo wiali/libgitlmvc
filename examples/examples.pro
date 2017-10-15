@@ -1,19 +1,11 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2013-08-03T00:09:19
-#
-#-------------------------------------------------
-
-QT       += core gui
-
-greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
+QT += core gui
+QT += widgets
 
 TARGET = examples
 CONFIG   += c++11
 CONFIG   -= console
 CONFIG   -= app_bundle
 TEMPLATE = app
-
 
 SOURCES += main.cpp \
     mainwindow.cpp
@@ -26,16 +18,13 @@ HEADERS  += \
 FORMS    += \
     mainwindow.ui
 
+INCLUDEPATH   += ../../libmvc/src
 
-INCLUDEPATH    += ../../libgitlmvc/src \
-                  ../libgitlevtbus/src
-
-
-LIBS += -L$${OUT_PWD}/.. -L$${OUT_PWD}/../libgitlevtbus
+LIBS += -L$${OUT_PWD}/..
 
 CONFIG(debug, debug|release){
-    LIBS += -lGitlMVCd -lGitlEvtBusd
+    LIBS += -lGitlMVCd
 }
 CONFIG(release, debug|release){
-    LIBS += -lGitlMVC  -lGitlEvtBus
+    LIBS += -lGitlMVC
 }

@@ -2,13 +2,13 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include "gitlview.h"
+#include "view.h"
 
 namespace Ui {
 class MainWindow;
 }
 
-class MainWindow : public QMainWindow, public GitlView
+class MainWindow : public QMainWindow, public View
 {
     Q_OBJECT
     
@@ -17,7 +17,7 @@ public:
     ~MainWindow();
 
     /// it receives the result from commands
-    void onUIUpdate(GitlUpdateUIEvt& rcEvt);
+    void onUIUpdate(UpdateUIEvt& rcEvt);
     
 private slots:
     void on_mtTestButton_clicked();

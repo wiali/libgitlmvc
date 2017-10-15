@@ -1,15 +1,15 @@
 #ifndef TESTMODEL_H
 #define TESTMODEL_H
-#include "gitldef.h"
-#include "gitlmodel.h"
+#include "def.h"
+#include "model.h"
 /// model
-class TestModel: public GitlModel<TestModel>
+class TestModel: public Model<TestModel>
 {
     ADD_CLASS_FIELD(QString, strDataInModel, getDataInModel, setDataInModel)
 
 protected:
     TestModel() {}
-    friend class GitlModel<TestModel>;
+    friend class Model<TestModel>;
 };
 
 #endif // TESTMODEL_H
